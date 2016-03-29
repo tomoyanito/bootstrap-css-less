@@ -10,8 +10,10 @@
 
 .navbar {
   position: relative;
+  padding-top:20px;
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: @navbar-margin-bottom;
+  border-bottom: none!important;
   border: 1px solid transparent;
 
   // Prevent floats from breaking the navbar
@@ -51,7 +53,8 @@
   overflow-x: visible;
   padding-right: @navbar-padding-horizontal;
   padding-left:  @navbar-padding-horizontal;
-  border-top: 1px solid transparent;
+  margin-top: 0;
+  border-top: none;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
   &:extend(.clearfix all);
   -webkit-overflow-scrolling: touch;
@@ -86,7 +89,7 @@
     }
   }
 }
-
+  
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   .navbar-collapse {
@@ -162,10 +165,12 @@
 
 .navbar-brand {
   float: left;
-  padding: @navbar-padding-vertical @navbar-padding-horizontal;
+  padding: 25px 0 0 15px;
   font-size: @font-size-large;
-  line-height: @line-height-computed;
+  font-weight: 200;
+  line-height: 20px;
   height: @navbar-height;
+  color: @brand-text!important; /* Menu title color */
 
   &:hover,
   &:focus {
@@ -193,14 +198,18 @@
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: @navbar-padding-horizontal;
-  padding: 9px 10px;
+  margin-top: 15px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  padding: 9px 9px;
   .navbar-vertical-align(34px);
-  background-color: transparent;
+  background-color: @white-gray!important; /* Menu button color */
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid transparent;
-  border-radius: @border-radius-base;
-
+  opacity: 0.8;
+  border: none;
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
   // We remove the `outline` here, but later compensate by attaching `:hover`
   // styles to `:focus`.
   &:focus {
@@ -235,7 +244,9 @@
   > li > a {
     padding-top:    10px;
     padding-bottom: 10px;
-    line-height: @line-height-computed;
+    line-height: @line-height-20;
+	font-weight: 500;
+	color: @brand-text!important; /* Menu text color 1 */
   }
 
   @media (max-width: @grid-float-breakpoint-max) {

@@ -7,7 +7,7 @@
 //
 
 html {
-  font-family: sans-serif; // 1
+  font-family: @font-family-sans-serif; // 1
   -ms-text-size-adjust: 100%; // 2
   -webkit-text-size-adjust: 100%; // 2
 }
@@ -88,6 +88,8 @@ template {
 
 a {
   background-color: transparent;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 //
@@ -184,6 +186,9 @@ sub {
 
 img {
   border: 0;
+  width: 100%;  
+  margin: 0 auto;
+  text-align: left;
 }
 
 //
@@ -414,6 +419,7 @@ optgroup {
 //
 
 table {
+  font-size: @font-size-table;
   border-collapse: collapse;
   border-spacing: 0;
 }

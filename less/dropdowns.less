@@ -30,16 +30,16 @@
 // The dropdown menu (ul)
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 105%;
   left: 0;
   z-index: @zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
   float: left;
-  min-width: 160px;
-  padding: 5px 0;
+  min-width: 170px;
+  padding: 0;
   margin: 2px 0 0; // override default ul
   list-style: none;
-  font-size: @font-size-base;
+  font-size: @font-size-table;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
   background-color: @dropdown-bg;
   border: 1px solid @dropdown-fallback-border; // IE8 fallback
@@ -59,6 +59,9 @@
   // Dividers (basically an hr) within the dropdown
   .divider {
     .nav-divider(@dropdown-divider-bg);
+  height: 1px;
+  text-align: right;
+  overflow: hidden;
   }
 
   // Links within the dropdown menu
@@ -66,9 +69,10 @@
     display: block;
     padding: 3px 20px;
     clear: both;
-    font-weight: normal;
-    line-height: @line-height-base;
+    font-weight: 500;
+    line-height: 2.5;
     color: @dropdown-link-color;
+	border-bottom: 1px solid @mid-gray;
     white-space: nowrap; // prevent links from randomly breaking onto new lines
   }
 }

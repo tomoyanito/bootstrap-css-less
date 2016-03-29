@@ -6,8 +6,13 @@
 // Wrapper for the slide container and indicators
 .carousel {
   position: relative;
+  height: 550px;
+  margin-bottom: -100px;
+  .item {
+  height: 550px;
+  background-color: @carousel-bg;
+  }
 }
-
 .carousel-inner {
   position: relative;
   overflow: hidden;
@@ -19,6 +24,13 @@
     .transition(.6s ease-in-out left);
 
     // Account for jankitude on images
+	> img {
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 100%;
+	opacity: 0.8;
+	}
     > img,
     > a > img {
       &:extend(.img-responsive);
@@ -224,10 +236,38 @@
   padding-top: 20px;
   padding-bottom: 20px;
   color: @carousel-caption-color;
-  text-align: center;
+  text-align: right;
   text-shadow: @carousel-text-shadow;
+  width: 70%;
+  max-width: 980px;
   & .btn {
     text-shadow: none; // No shadow for button elements in carousel-caption
+  }
+  h1, 
+  h2 {
+  font-size: 2em!important;
+  font-weight: 700;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1.0);
+  color: @carousel-caption-color;
+  }
+  .title{
+  font-size:2.6em!important;
+  font-weight:200!important;
+  margin:0;
+  }
+  .lead{
+  font-size:1.5em!important;
+  font-weight: 500!important;	
+  font-size:1.2em;
+  margin:-5px 0;
+  }
+  .bold{
+  font-weight: 900;
+  font-size: 1.3em;
+  }
+  .carousel-caption .small{
+  margin-top: -20px;
+  font-size: 0.8em;
   }
 }
 
@@ -267,4 +307,43 @@
   .carousel-indicators {
     bottom: 20px;
   }
+}
+
+
+
+@media (max-width: 767px) {
+.carousel-inner > .item > img {
+ min-width: 190%;
+ margin-left: -50%;
+ }
+}
+@media (max-width: 740px) {
+.carousel{
+ height: 470px;
+ margin-top: 0;
+ }
+.carousel .item {
+ height: 470px;
+ top: 0;  
+ }
+.carousel-caption {
+ width: 75%;
+ text-align: right;
+ }
+.carousel-caption .title{
+ font-size: 145%!important;
+ margin-top: -10px;
+ }
+.carousel-caption .lead{
+ font-size: 110%!important;
+ margin-bottom: 10px;
+ }
+.carousel-caption .bold{
+ font-size: 120%;
+ }
+.carousel-caption .small{
+ margin-top: -20px;
+ font-size: 75%;
+ line-height: 1.7em!important;
+ }
 }

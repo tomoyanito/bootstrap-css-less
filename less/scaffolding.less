@@ -20,6 +20,8 @@
 // Body reset
 
 html {
+  position: relative; //for footer
+  min-height: 100%; //for footer
   font-size: 10px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -27,9 +29,12 @@ html {
 body {
   font-family: @font-family-base;
   font-size: @font-size-base;
+  font-weight: @font-weight-normal;
   line-height: @line-height-base;
   color: @text-color;
   background-color: @body-bg;
+  margin-bottom: 100px;  /* Margin bottom by footer height */
+
 }
 
 // Reset fonts for relevant elements
